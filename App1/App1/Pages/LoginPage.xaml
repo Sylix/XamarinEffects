@@ -1,0 +1,74 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:customizingXamarinForms="clr-namespace:App1.Effects;"
+             x:Class="App1.Pages.LoginPage"
+             BackgroundImage="fundo.jpg">
+    <ContentPage.Content>
+        <ScrollView>
+        <StackLayout
+            Orientation="Vertical"
+            VerticalOptions="CenterAndExpand"
+            Padding="20"
+            Spacing="20">
+            <Image
+                HorizontalOptions="Center"
+                HeightRequest="200"
+                Source="coruja.png"
+                Aspect="AspectFit"/>
+
+            <Label  Text="Developers-SP"
+                    FontSize="Large"
+                    HorizontalOptions="Center">
+                <Label.Effects>
+                    <customizingXamarinForms:UnderlineEffect />
+                </Label.Effects>
+
+            </Label>
+            <Frame
+                BackgroundColor="#10042035"
+                HasShadow="False">
+
+                <StackLayout
+                    Orientation="Vertical"
+                    Spacing="10">
+
+                    <Entry
+                        x:Name="EmailEntry"
+                        Text="{Binding EmailAddress}"
+                        Placeholder="Email"
+                        HeightRequest="40"
+                        TextColor="Black"
+                        BackgroundColor="White">
+                        <Entry.Effects>
+                            <customizingXamarinForms:ReturnKeyEffect ReturnText="Next" />
+                        </Entry.Effects>
+                    </Entry>
+
+                    <Entry
+                        x:Name="PasswordEntry"
+                        IsPassword="True"
+                        Text="{Binding Password}"
+                        Placeholder="Password"
+                        HeightRequest="40"
+                        TextColor="Black"
+                        BackgroundColor="White">
+                        <Entry.Effects>
+                            <customizingXamarinForms:ReturnKeyEffect ReturnText="Done" />
+                        </Entry.Effects>
+                    </Entry>
+                </StackLayout>
+            </Frame>
+
+            <Button
+                Command="{Binding SubmitComman}"
+                Text="Login"
+                TextColor="White"
+                FontAttributes="Bold"
+                FontSize="20"
+                HorizontalOptions="FillAndExpand"
+                BackgroundColor="#F49131"/>
+        </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>
